@@ -1,6 +1,6 @@
 {
   "name": "@myx0m0p/tcp-wallet-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NPM package to implement TCP wallet",
   "main": "index.js",
   "scripts": {
