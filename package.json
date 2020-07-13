@@ -1,0 +1,72 @@
+{
+  "name": "tcp-wallet-lib",
+  "version": "1.0.0",
+  "description": "NPM package to implement TCP wallet",
+  "main": "index.js",
+  "scripts": {
+    "clean": "shx rm -rf dist/*",
+    "build": "npm-run-all clean check-by-eslint compile-ts",
+    "check-by-eslint": "eslint **/*.ts --fix",
+    "test": "jest --runInBand",
+    "test-watch": "jest --watchAll --verbose --runInBand",
+    "compile-ts": "tsc",
+    "compile-ts-watch": "tsc --watch"
+  },
+  "engines": {
+    "node": ">=12.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/myx0m0p/TCPWalletLib.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "TCP",
+    "Telos",
+    "EOSIO"
+  ],
+  "homepage": "https://github.com/myx0m0p/TCPWalletLib/blob/master/README.md",
+  "author": "Andrew U <tmyx0m0p@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@myx0m0p/tcp-common-lib": "^1.0.2",
+    "bignumber": "^1.1.0",
+    "bignumber.js": "^9.0.0",
+    "bytebuffer": "^5.0.1",
+    "eosjs": "^20.0.3",
+    "eosjs-ecc": "^4.0.7",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
+    "node-fetch": "^2.6.0",
+    "uniqid": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.1",
+    "@types/node": "^13.13.14",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "delay": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-optimize-regex": "^1.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.10.0",
+    "jest": "^24.9.0",
+    "jest-expect-message": "^1.0.2",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.2",
+    "ts-jest": "^24.3.0",
+    "tsutils": "^3.17.1",
+    "typescript": "^3.9.6"
+  }
+}
