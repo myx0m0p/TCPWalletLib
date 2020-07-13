@@ -1,6 +1,6 @@
 {
   "name": "@myx0m0p/tcp-wallet-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "NPM package to implement TCP wallet",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   "author": "Andrew U <tmyx0m0p@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@myx0m0p/tcp-common-lib": "^1.0.2",
+    "@myx0m0p/tcp-common-lib": "^1.0.3",
     "bignumber": "^1.1.0",
     "bignumber.js": "^9.0.0",
     "bytebuffer": "^5.0.1",
