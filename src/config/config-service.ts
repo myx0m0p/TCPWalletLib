@@ -1,44 +1,38 @@
-import ConfigStorage = require('./config-storage');
+interface BlockchainConfig {
+  apiEndpoint: string,
+  historyEndpoint: string,
+  calculatorEndpoint: string,
+}
 
-const TEST_ENV        = 'test';
-const DEV_ENV        = 'dev';
-const STAGING_ENV     = 'staging';
-const PRODUCTION_ENV  = 'production';
+let isNode = false;
+let isInit = false;
 
-let isNode  = false;
-let env     = DEV_ENV;
+let config: BlockchainConfig = {
+  apiEndpoint: '',
+  historyEndpoint: '',
+  calculatorEndpoint: '',
+};
 
 class ConfigService {
-  public static getConfig(): any {
-    return ConfigStorage[env];
+  public static getConfig(): BlockchainConfig {
+    return config;
   }
 
-  /**
-   *
-   * @return {void}
-   */
-  public static initNodeJsEnv() {
+  public static initNodeJsEnv(): void {
     isNode = true;
-  }
-
-  public static initForTestEnv(): void {
-    env = TEST_ENV;
-  }
-
-  public static initForDevEnv(): void {
-    env = DEV_ENV;
-  }
-
-  public static initForStagingEnv(): void {
-    env = STAGING_ENV;
-  }
-
-  public static initForProductionEnv(): void {
-    env = PRODUCTION_ENV;
   }
 
   public static isNode(): boolean {
     return isNode;
+  }
+
+  public static iInit(): boolean {
+    return isInit;
+  }
+
+  public static init(object: BlockchainConfig): void {
+    config = object;
+    isInit = true;
   }
 }
 

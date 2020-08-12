@@ -3,7 +3,7 @@ import TransactionsPushResponseChecker = require('../../../helpers/common/transa
 import TransactionsSamplesGenerator = require('../../../helpers/wallet/transactions-samples-generator');
 import WalletApi = require('../../../../src/lib/wallet/api/wallet-api');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountName = Helper.getTesterAccountName();
 
@@ -36,4 +36,4 @@ describe('Send transactions to blockchain', () => {
   });
 });
 
-export {};
+export { };

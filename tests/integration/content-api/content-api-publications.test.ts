@@ -15,11 +15,11 @@ import CommonChecker = require('../../helpers/common/common-checker');
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountNameFrom = Helper.getTesterAccountName();
-const privateKey      = Helper.getTesterAccountSocialPrivateKey();
-const permission      = PermissionsDictionary.social();
+const privateKey = Helper.getTesterAccountSocialPrivateKey();
+const permission = PermissionsDictionary.social();
 
 const multiSignatureAccount = Helper.getMultiSignatureAccount();
 
@@ -41,8 +41,8 @@ describe('Create publication', () => {
   }, JEST_TIMEOUT);
 
   it('Smoke - send a new publication from organization to the blockchain', async () => {
-    const content                   = ContentPostsGenerator.getSamplePostInputFields();
-    const organizationBlockchainId  = ContentOrganizationsGenerator.getBlockchainId();
+    const content = ContentPostsGenerator.getSamplePostInputFields();
+    const organizationBlockchainId = ContentOrganizationsGenerator.getBlockchainId();
 
     const { action } = ContentPublicationsActionsApi.getCreatePublicationFromOrganizationAction(
       multiSignatureAccount, organizationBlockchainId, content,
@@ -79,8 +79,8 @@ describe('Update publication', () => {
   }, JEST_TIMEOUT);
 
   it('Send an updated publication from organization to the blockchain', async () => {
-    const givenContent         = ContentPostsGenerator.getSamplePostInputFields();
-    givenContent.created_at    = ContentPostsGenerator.getSamplePostInputCreatedAt();
+    const givenContent = ContentPostsGenerator.getSamplePostInputFields();
+    givenContent.created_at = ContentPostsGenerator.getSamplePostInputCreatedAt();
     const organizationBlockchainId = ContentOrganizationsGenerator.getBlockchainId();
 
     const publicationBlockchainId = ContentPostsGenerator.getSamplePostBlockchainId();
@@ -102,7 +102,7 @@ describe('Update publication', () => {
 
 describe('Legacy', () => {
   it('Send a new publication from organization to the blockchain', async () => {
-    const content         = ContentPostsGenerator.getSamplePostInputFields();
+    const content = ContentPostsGenerator.getSamplePostInputFields();
     const interactionName = InteractionsDictionary.createMediaPostFromOrganization();
     const orgBlockchainId = ContentOrganizationsGenerator.getBlockchainId();
 
@@ -126,8 +126,8 @@ describe('Legacy', () => {
   }, JEST_TIMEOUT);
 
   it('Send an updated publication from organization to the blockchain', async () => {
-    const content         = ContentPostsGenerator.getSamplePostInputFields();
-    content.created_at    = ContentPostsGenerator.getSamplePostInputCreatedAt();
+    const content = ContentPostsGenerator.getSamplePostInputFields();
+    content.created_at = ContentPostsGenerator.getSamplePostInputCreatedAt();
     const interactionName = InteractionsDictionary.updateMediaPostFromOrganization();
     const orgBlockchainId = ContentOrganizationsGenerator.getBlockchainId();
 
@@ -154,4 +154,4 @@ describe('Legacy', () => {
   }, JEST_TIMEOUT);
 });
 
-export {};
+export { };

@@ -1,11 +1,9 @@
 "use strict";
 const ENV__TEST = 'test';
-const ENV__DEV = 'dev';
 const ENV__STAGING = 'staging';
 const ENV__PRODUCTION = 'production';
 const envList = [
     ENV__TEST,
-    ENV__DEV,
     ENV__STAGING,
     ENV__PRODUCTION,
 ];
@@ -20,9 +18,6 @@ class EnvHelper {
     }
     static testEnv() {
         return ENV__TEST;
-    }
-    static devEnv() {
-        return ENV__DEV;
     }
     static stagingEnv() {
         return ENV__STAGING;
@@ -52,9 +47,6 @@ class EnvHelper {
     }
     static isTestEnv() {
         return this.isExpectedEnv(ENV__TEST);
-    }
-    static isDevEnv() {
-        return this.isExpectedEnv(ENV__DEV);
     }
     static isStagingEnv() {
         return this.isExpectedEnv(ENV__STAGING);

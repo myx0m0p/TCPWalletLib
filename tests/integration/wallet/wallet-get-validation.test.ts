@@ -4,7 +4,7 @@ import { UOS } from '../../../src/lib/dictionary/currency-dictionary';
 import Helper = require('../../helpers/helper');
 import WalletApi = require('../../../src/lib/wallet/api/wallet-api');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountName = Helper.getTesterAccountName();
 const accountNameTo = Helper.getAccountNameTo();
@@ -170,4 +170,4 @@ describe('Get blockchain info and validation checks', () => {
   });
 });
 
-export {};
+export { };

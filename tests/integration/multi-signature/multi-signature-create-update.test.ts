@@ -13,9 +13,9 @@ import MultiSignatureApi = require('../../../src/lib/multi-signature/api/multi-s
 import PermissionsDictionary = require('../../../src/lib/dictionary/permissions-dictionary');
 import ContentApi = require('../../../src/lib/content/api/content-api');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
-const activePrivateKey  = Helper.getTesterAccountPrivateKey();
+const activePrivateKey = Helper.getTesterAccountPrivateKey();
 
 const accountName = Helper.getTesterAccountName();
 
@@ -183,4 +183,4 @@ async function checkProfileInSmartContract(multiSignatureAccount: string, profil
   expect(smartContractData).toMatchObject(expectedData);
 }
 
-export {};
+export { };

@@ -9,7 +9,7 @@ import SmartContractsDictionary = require('../../../src/lib/dictionary/smart-con
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountNameFrom = Helper.getTesterAccountName();
 
@@ -42,4 +42,4 @@ it('Resend reposts - historical', async () => {
   );
 }, JEST_TIMEOUT);
 
-export {};
+export { };

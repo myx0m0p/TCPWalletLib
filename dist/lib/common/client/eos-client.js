@@ -7,71 +7,17 @@ const { Api, JsonRpc, RpcError } = require('eosjs');
 const { JsSignatureProvider } = require('eosjs/dist/eosjs-jssig');
 class EosClient {
     /**
-     * @deprecated
-     * @see ConfigService.initNodeJsEnv
-     * @return {void}
-     */
-    static setNodeJsEnv() {
-        ConfigService.initNodeJsEnv();
-    }
-    /**
-     * @deprecated
-     * @see ConfigService.initForTestEnv
-     * @return void
-     */
-    static initForTestEnv() {
-        ConfigService.initForTestEnv();
-    }
-    /**
-     * @deprecated
-     * @see ConfigService.initForStagingEnv()
-     * @return void
-     */
-    static initForStagingEnv() {
-        ConfigService.initForStagingEnv();
-    }
-    /**
-     * @deprecated
-     * @see ConfigService.initForProductionEnv()
-     * @return void
-     */
-    static initForProductionEnv() {
-        ConfigService.initForProductionEnv();
-    }
-    // noinspection JSUnusedGlobalSymbols
-    /**
-     *
-     * @return {boolean}
-     */
-    static isProduction() {
-        const config = ConfigService.getConfig();
-        return config.env === 'production';
-    }
-    // noinspection JSUnusedGlobalSymbols
-    /**
-     *
-     * @return {boolean}
-     */
-    static isStaging() {
-        const config = ConfigService.getConfig();
-        return config.env === 'staging';
-    }
-    static getCurrentConfigTableRows() {
-        const config = ConfigService.getConfig();
-        return config.tableRows;
-    }
-    /**
      *
      * @return {JsonRpc}
      */
     static getRpcClient() {
-        const config = ConfigService.getConfig();
+        const url = ConfigService.getConfig().apiEndpoint;
         if (ConfigService.isNode()) {
             // eslint-disable-next-line global-require
             const fetch = require('node-fetch');
-            return new JsonRpc(config.nodeUrl, { fetch });
+            return new JsonRpc(url, { fetch });
         }
-        return new JsonRpc(config.nodeUrl);
+        return new JsonRpc(url);
     }
     /**
      *

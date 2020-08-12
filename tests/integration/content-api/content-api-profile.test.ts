@@ -10,11 +10,11 @@ import ContentProfileHelper = require('../../helpers/content/content-profile-hel
 
 const JEST_TIMEOUT = 40000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
-const accountNameFrom   = Helper.getTesterAccountName();
-const socialPrivateKey  = Helper.getTesterAccountSocialPrivateKey();
-const permission        = PermissionsDictionary.social();
+const accountNameFrom = Helper.getTesterAccountName();
+const socialPrivateKey = Helper.getTesterAccountSocialPrivateKey();
+const permission = PermissionsDictionary.social();
 
 describe('Positive', () => {
   it('Account RAM is decreased', async () => {
@@ -71,9 +71,9 @@ describe('Positive', () => {
     const smartContractData = await ContentApi.getOneAccountProfileFromSmartContractTable(accountNameFrom);
 
     const expectedProfile = {
-      account_name:         accountNameFrom,
-      is_tracking_allowed:  isTrackingAllowed,
-      profile_updated_at:   userCreatedAt,
+      account_name: accountNameFrom,
+      is_tracking_allowed: isTrackingAllowed,
+      profile_updated_at: userCreatedAt,
     };
 
     const expectedData = {
@@ -102,4 +102,4 @@ describe('Negative', () => {
   }, JEST_TIMEOUT);
 });
 
-export {};
+export { };

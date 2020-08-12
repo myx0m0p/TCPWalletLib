@@ -12,7 +12,7 @@ const { EntityNames } = require('@myx0m0p/tcp-common-lib').Common.Dictionary;
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountNameFrom = Helper.getTesterAccountName();
 const accountNameTo = Helper.getAccountNameTo();

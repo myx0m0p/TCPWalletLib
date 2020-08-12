@@ -8,11 +8,11 @@ import ContentPostsChecker = require('../../helpers/content/posts/content-checke
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountNameFrom = Helper.getTesterAccountName();
-const privateKey      = Helper.getTesterAccountSocialPrivateKey();
-const permission      = PermissionsDictionary.social();
+const privateKey = Helper.getTesterAccountSocialPrivateKey();
+const permission = PermissionsDictionary.social();
 
 it('Create repost', async () => {
   const content = ContentPostsGenerator.getDirectPostOrRepostInputFields();
@@ -36,4 +36,4 @@ it('Create repost', async () => {
   );
 }, JEST_TIMEOUT);
 
-export {};
+export { };

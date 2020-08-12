@@ -5,7 +5,7 @@ const { JsonRpc } = require('eosjs');
 
 class CalculatorRpcClient {
   public static getClient(): any {
-    const url: string = ConfigService.getConfig().calculatorUrl;
+    const url: string = ConfigService.getConfig().calculatorEndpoint;
 
     if (ConfigService.isNode()) {
       const fetch = require('node-fetch');

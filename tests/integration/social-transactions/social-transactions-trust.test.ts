@@ -10,7 +10,7 @@ import SocialActionExpectedDataHelper = require('../../helpers/social/social-act
 
 const JEST_TIMEOUT = 40000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountName = Helper.getTesterAccountName();
 const privateKey = Helper.getTesterAccountSocialPrivateKey();
@@ -126,4 +126,4 @@ async function signAndSendTransaction() {
   );
   TransactionsPushResponseChecker.checkOneTransaction(trustTrxResponse, expected);
 }
-export {};
+export { };

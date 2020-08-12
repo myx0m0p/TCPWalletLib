@@ -11,7 +11,7 @@ import SmartContractsDictionary = require('../../../src/lib/dictionary/smart-con
 const JEST_TIMEOUT = 15000;
 
 describe('Resend media-posts (publications) to the blockchain', () => {
-  Helper.initForEnvByProcessVariable();
+  Helper.initBlockchain();
 
   const accountNameFrom = Helper.getTesterAccountName();
 
@@ -44,7 +44,7 @@ describe('Resend media-posts (publications) to the blockchain', () => {
     }, JEST_TIMEOUT);
 
     it('Resend a publication from organization to the blockchain', async () => {
-      const content         = ContentPostsGenerator.getSamplePostInputFields();
+      const content = ContentPostsGenerator.getSamplePostInputFields();
       const interactionName = InteractionsDictionary.createMediaPostFromOrganization();
       const orgBlockchainId = ContentOrganizationsGenerator.getBlockchainId();
       const postBlockchainId = ContentPostsGenerator.getSamplePostBlockchainId();
@@ -74,4 +74,4 @@ describe('Resend media-posts (publications) to the blockchain', () => {
   });
 });
 
-export {};
+export { };

@@ -14,7 +14,7 @@ import BlockchainNodesHelper = require('../../../helpers/blockchain-nodes/blockc
 import WalletApi = require('../../../../src/lib/wallet/api/wallet-api');
 import NumbersHelper = require('../../../../src/lib/helpers/numbers-helper');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const JEST_TIMEOUT = 40000;
 
@@ -46,7 +46,7 @@ describe('Blockchain nodes fetching', () => {
 
       await WalletApi.voteForBlockProducers(accountName, privateKey, Object.keys(twoNodesToTest));
 
-      const { blockProducersWithVoters:nodesAfterTwoVotes } = await BlockchainNodesApi.getAll();
+      const { blockProducersWithVoters: nodesAfterTwoVotes } = await BlockchainNodesApi.getAll();
 
       for (const title in twoNodesToTest) {
         if (!twoNodesToTest.hasOwnProperty(title)) {
@@ -67,7 +67,7 @@ describe('Blockchain nodes fetching', () => {
       const singleNodeToVote = Object.keys(twoNodesToTest)[0];
       await WalletApi.voteForBlockProducers(accountName, privateKey, [singleNodeToVote]);
 
-      const { blockProducersWithVoters:nodesAfterSingleVote } = await BlockchainNodesApi.getAll();
+      const { blockProducersWithVoters: nodesAfterSingleVote } = await BlockchainNodesApi.getAll();
 
       for (const title in twoNodesToTest) {
         if (!twoNodesToTest.hasOwnProperty(title)) {
@@ -119,7 +119,7 @@ describe('Blockchain nodes fetching', () => {
 
       await WalletApi.voteForCalculatorNodes(accountName, privateKey, Object.keys(twoNodesToTest));
 
-      const { calculatorsWithVoters:nodesAfterTwoVotes } = await BlockchainNodesApi.getAll();
+      const { calculatorsWithVoters: nodesAfterTwoVotes } = await BlockchainNodesApi.getAll();
 
       for (const title in twoNodesToTest) {
         if (!twoNodesToTest.hasOwnProperty(title)) {
@@ -150,7 +150,7 @@ describe('Blockchain nodes fetching', () => {
       const singleNodeToVote = Object.keys(twoNodesToTest)[0];
       await WalletApi.voteForCalculatorNodes(accountName, privateKey, [singleNodeToVote]);
 
-      const { calculatorsWithVoters:nodesAfterSingleVote } = await BlockchainNodesApi.getAll();
+      const { calculatorsWithVoters: nodesAfterSingleVote } = await BlockchainNodesApi.getAll();
 
       for (const title in twoNodesToTest) {
         if (!twoNodesToTest.hasOwnProperty(title)) {
@@ -273,4 +273,4 @@ describe('Blockchain nodes fetching', () => {
   });
 });
 
-export {};
+export { };

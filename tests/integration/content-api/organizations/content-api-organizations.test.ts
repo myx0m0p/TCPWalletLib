@@ -8,11 +8,11 @@ import ContentOrganizationsGenerator = require('../../../helpers/content/posts/c
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountNameFrom = Helper.getTesterAccountName();
-const privateKey      = Helper.getTesterAccountSocialPrivateKey();
-const permission      = PermissionsDictionary.social();
+const privateKey = Helper.getTesterAccountSocialPrivateKey();
+const permission = PermissionsDictionary.social();
 
 it('Create organization (community)', async () => {
   const content = ContentOrganizationsGenerator.getFormFields();
@@ -31,10 +31,10 @@ it('Create organization (community)', async () => {
 }, JEST_TIMEOUT);
 
 it('Update organization (community)', async () => {
-  const content       = ContentOrganizationsGenerator.getFormFields();
-  content.created_at  = ContentOrganizationsGenerator.getCreatedAt();
+  const content = ContentOrganizationsGenerator.getFormFields();
+  content.created_at = ContentOrganizationsGenerator.getCreatedAt();
 
-  const blockchainId    = ContentOrganizationsGenerator.getBlockchainId();
+  const blockchainId = ContentOrganizationsGenerator.getBlockchainId();
   const interactionName = InteractionsDictionary.updateOrganization();
 
   const signed_transaction = await ContentOrganizationsApi.signUpdateOrganization(
@@ -50,4 +50,4 @@ it('Update organization (community)', async () => {
   ContentPostsChecker.checkOrganizationPushingResponse(response, interactionName, accountNameFrom, blockchainId);
 }, JEST_TIMEOUT);
 
-export {};
+export { };

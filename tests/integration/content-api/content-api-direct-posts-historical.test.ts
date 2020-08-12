@@ -11,7 +11,7 @@ import SmartContractsActionsDictionary = require('../../../src/lib/dictionary/sm
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 const { EntityNames } = require('@myx0m0p/tcp-common-lib').Common.Dictionary;
 
 const accountNameFrom = Helper.getTesterAccountName();

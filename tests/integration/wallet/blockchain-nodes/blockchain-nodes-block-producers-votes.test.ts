@@ -2,14 +2,14 @@ import Helper = require('../../../helpers/helper');
 import WalletApi = require('../../../../src/lib/wallet/api/wallet-api');
 import PermissionsDictionary = require('../../../../src/lib/dictionary/permissions-dictionary');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountName = Helper.getTesterAccountName();
 
 const activePrivateKey = Helper.getTesterAccountPrivateKey();
 
-const socialPrivateKey  = Helper.getTesterAccountSocialPrivateKey();
-const permission        = PermissionsDictionary.social();
+const socialPrivateKey = Helper.getTesterAccountSocialPrivateKey();
+const permission = PermissionsDictionary.social();
 
 const nonExistedAccountErrorRegex = new RegExp('Probably account does not exist. Please check spelling');
 const noStakeErrorRegex = new RegExp('It is possible to vote only if you have self-staked tokens.');
@@ -73,4 +73,4 @@ describe('Block producers voting', () => {
   }, JEST_TIMEOUT);
 });
 
-export {};
+export { };

@@ -20,13 +20,17 @@ require('jest-expect-message');
 const airdropAccountName = 'testairdrop1';
 const airdropHolderAccountName = 'testholder11';
 
-let accountName = 'vladvladvlad';
-let accountNameTo = 'janejanejane';
+const accountName = 'vladvladvlad';
+const accountNameTo = 'janejanejane';
 
-let firstBlockProducer = 'calc1';
-let secondBlockProducer = 'calc2';
+const firstBlockProducer = 'calc1';
+const secondBlockProducer = 'calc2';
 
-let multiSignatureAccount = 'tgkkay4ijpx1'; // cz4kagygcrrd
+const multiSignatureAccount = 'tgkkay4ijpx1'; // cz4kagygcrrd
+
+const apiEndpoint = 'http://localhost:1111'; // eos api endpoint
+const historyEndpoint = 'http://localhost:1111'; // eos history endpoint
+const calculatorEndpoint = 'http://localhost:1111'; // eos calculator endpoint
 
 class Helper {
   public static getHistoricalSenderAccountName(): string {
@@ -85,63 +89,12 @@ class Helper {
     return accountsData[airdropHolderAccountName].activePk;
   }
 
-  static initForTestEnv() {
-    accountName = 'vladvladvlad';
-    accountNameTo = 'janejanejane';
-
-    firstBlockProducer = 'calc1';
-    secondBlockProducer = 'calc2';
-
-    multiSignatureAccount = 'cz4kagygcrrd';
-
-    ConfigService.initNodeJsEnv();
-    ConfigService.initForTestEnv();
-  }
-
-  static initForStagingEnv() {
-    accountName = 'vladvladvlad';
-    accountNameTo = 'janejanejane';
-
-    firstBlockProducer = 'calc1';
-    secondBlockProducer = 'calc2';
-
-    multiSignatureAccount = 'cz4kagygcrrd';
-
-    ConfigService.initNodeJsEnv();
-    ConfigService.initForStagingEnv();
-  }
-
-  // noinspection JSUnusedGlobalSymbols
-  /**
-   * @return void
-   */
-  static initForProductionEnv() {
-    accountName = 'summerknight';
-    accountNameTo = 'autumnknight';
-
-    firstBlockProducer = 'initbp111151';
-    secondBlockProducer = 'initbp111141';
-
-    multiSignatureAccount = 'tgkkay4ijpx1';
-
-    ConfigService.initNodeJsEnv();
-    ConfigService.initForProductionEnv();
-  }
-
-  public static initForEnvByProcessVariable() {
-    const executors = {
-      [EnvHelper.testEnv()]: () => {
-        Helper.initForTestEnv();
-      },
-      [EnvHelper.stagingEnv()]: () => {
-        Helper.initForStagingEnv();
-      },
-      [EnvHelper.productionEnv()]: () => {
-        Helper.initForProductionEnv();
-      },
-    };
-
-    EnvHelper.executeByEnvironment(executors);
+  static initBlockchain() {
+    ConfigService.init({
+      apiEndpoint,
+      historyEndpoint,
+      calculatorEndpoint,
+    });
   }
 
   /**

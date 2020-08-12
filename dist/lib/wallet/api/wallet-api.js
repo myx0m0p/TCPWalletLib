@@ -9,45 +9,9 @@ const EosClient = require("../../common/client/eos-client");
 const InputValidator = require("../../validators/input-validator");
 const BlockchainRegistry = require("../../blockchain-registry");
 const TransactionSender = require("../../transaction-sender");
-const ConfigService = require("../../../config/config-service");
 const PermissionsDictionary = require("../../dictionary/permissions-dictionary");
 const ConverterHelper = require("../../helpers/converter-helper");
 class WalletApi {
-    /**
-     * @deprecated
-     * @see ConfigService.initNodeJsEnv()
-     * @return {void}
-     */
-    static setNodeJsEnv() {
-        ConfigService.initNodeJsEnv();
-    }
-    // noinspection JSUnusedGlobalSymbols
-    /**
-     * @deprecated
-     * @see ConfigService.initForTestEnv()
-     * @return void
-     */
-    static initForTestEnv() {
-        ConfigService.initForTestEnv();
-    }
-    // noinspection JSUnusedGlobalSymbols
-    /**
-     * @deprecated
-     * @see ConfigService.initForStagingEnv()
-     * @return void
-     */
-    static initForStagingEnv() {
-        ConfigService.initForStagingEnv();
-    }
-    // noinspection JSUnusedGlobalSymbols
-    /**
-     * @deprecated
-     * @see ConfigService.initForProductionEnv()
-     * @return void
-     */
-    static initForProductionEnv() {
-        ConfigService.initForProductionEnv();
-    }
     static async voteForBlockProducers(accountName, privateKey, producers, permission = PermissionsDictionary.active()) {
         await BlockchainRegistry.doBlockProducersExist(producers);
         await BlockchainRegistry.isSelfDelegatedStake(accountName);

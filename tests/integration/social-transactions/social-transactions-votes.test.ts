@@ -8,7 +8,7 @@ import PermissionsDictionary = require('../../../src/lib/dictionary/permissions-
 
 const JEST_TIMEOUT = 10000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountName = Helper.getTesterAccountName();
 const privateKey = Helper.getTesterAccountSocialPrivateKey();
@@ -59,4 +59,4 @@ it('Downvote content', async () => {
   );
 }, JEST_TIMEOUT);
 
-export {};
+export { };

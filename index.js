@@ -4,7 +4,6 @@ module.exports = {
   SocialApi: require('./dist/lib/social-transactions/api/social-api'),
   SocialActionsApi: require('./dist/lib/social-transactions/api/social-actions-api'),
 
-  BackendApi: require('./dist/lib/backend-api'),
   ContentApi: require('./dist/lib/content/api/content-api'),
 
   Content: {

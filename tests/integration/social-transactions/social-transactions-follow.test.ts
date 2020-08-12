@@ -10,7 +10,7 @@ import CommonChecker = require('../../helpers/common/common-checker');
 
 const JEST_TIMEOUT = 40000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const permission = PermissionsDictionary.social();
 
@@ -52,4 +52,4 @@ it('Unfollow organization', async () => {
   await SocialTransactionsGenerator.signSendAndCheckUserToAccount(interaction, targetBlockchainId, permission);
 }, JEST_TIMEOUT);
 
-export {};
+export { };

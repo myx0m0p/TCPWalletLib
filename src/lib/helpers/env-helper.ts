@@ -1,11 +1,9 @@
 const ENV__TEST = 'test';
-const ENV__DEV = 'dev';
 const ENV__STAGING = 'staging';
 const ENV__PRODUCTION = 'production';
 
 const envList: string[] = [
   ENV__TEST,
-  ENV__DEV,
   ENV__STAGING,
   ENV__PRODUCTION,
 ];
@@ -24,10 +22,6 @@ class EnvHelper {
 
   public static testEnv(): string {
     return ENV__TEST;
-  }
-
-  public static devEnv(): string {
-    return ENV__DEV;
   }
 
   public static stagingEnv(): string {
@@ -68,10 +62,6 @@ class EnvHelper {
 
   public static isTestEnv(): boolean {
     return this.isExpectedEnv(ENV__TEST);
-  }
-
-  public static isDevEnv(): boolean {
-    return this.isExpectedEnv(ENV__DEV);
   }
 
   public static isStagingEnv(): boolean {

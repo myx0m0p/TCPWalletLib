@@ -3,7 +3,7 @@ import RegistrationApi = require('../../../src/lib/registration/api/registration
 import BlockchainRegistry = require('../../../src/lib/blockchain-registry');
 import CommonChecker = require('../../helpers/common/common-checker');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const JEST_TIMEOUT = 30000;
 
@@ -26,4 +26,4 @@ it('Registration', async () => {
   CommonChecker.expectNotEmpty(state);
 }, JEST_TIMEOUT);
 
-export {};
+export { };

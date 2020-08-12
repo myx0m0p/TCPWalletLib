@@ -8,50 +8,10 @@ import EosClient = require('../../common/client/eos-client');
 import InputValidator = require('../../validators/input-validator');
 import BlockchainRegistry = require('../../blockchain-registry');
 import TransactionSender = require('../../transaction-sender');
-import ConfigService = require('../../../config/config-service');
 import PermissionsDictionary = require('../../dictionary/permissions-dictionary');
 import ConverterHelper = require('../../helpers/converter-helper');
 
 class WalletApi {
-  /**
-   * @deprecated
-   * @see ConfigService.initNodeJsEnv()
-   * @return {void}
-   */
-  public static setNodeJsEnv(): void {
-    ConfigService.initNodeJsEnv();
-  }
-
-  // noinspection JSUnusedGlobalSymbols
-  /**
-   * @deprecated
-   * @see ConfigService.initForTestEnv()
-   * @return void
-   */
-  public static initForTestEnv(): void {
-    ConfigService.initForTestEnv();
-  }
-
-  // noinspection JSUnusedGlobalSymbols
-  /**
-   * @deprecated
-   * @see ConfigService.initForStagingEnv()
-   * @return void
-   */
-  public static initForStagingEnv(): void {
-    ConfigService.initForStagingEnv();
-  }
-
-  // noinspection JSUnusedGlobalSymbols
-  /**
-   * @deprecated
-   * @see ConfigService.initForProductionEnv()
-   * @return void
-   */
-  public static initForProductionEnv(): void {
-    ConfigService.initForProductionEnv();
-  }
-
   public static async voteForBlockProducers(
     accountName: string,
     privateKey: string,

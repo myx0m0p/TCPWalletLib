@@ -10,7 +10,7 @@ import SmartContractsActionsDictionary = require('../../../../src/lib/dictionary
 
 const JEST_TIMEOUT = 25000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const { EntityNames } = require('@myx0m0p/tcp-common-lib').Common.Dictionary;
 

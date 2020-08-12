@@ -7,16 +7,16 @@ class HyperionClient {
    * @return {HyperionRpc}
    */
   static getRpcClient() {
-    const config = ConfigService.getConfig();
+    const url: string = ConfigService.getConfig().historyEndpoint;
 
     if (ConfigService.isNode())  {
       // eslint-disable-next-line global-require
       const fetch = require('node-fetch');
 
-      return new HyperionRpc(config.hyperionUrl, { fetch });
+      return new HyperionRpc(url, { fetch });
     }
 
-    return new HyperionRpc(config.hyperionUrl);
+    return new HyperionRpc(url);
   }
 }
 

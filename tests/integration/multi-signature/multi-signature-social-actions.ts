@@ -6,7 +6,7 @@ import PermissionsDictionary = require('../../../src/lib/dictionary/permissions-
 import MultiSignatureWorkflow = require('../../../src/lib/multi-signature/service/multi-signature-workflow');
 import MultiSignatureApi = require('../../../src/lib/multi-signature/api/multi-signature-api');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const janeAccoutName = Helper.getAccountNameTo();
 
@@ -51,4 +51,4 @@ it('Smoke - trust user using multi-signature', async () => {
   CommonChecker.expectNotEmpty(response);
 }, JEST_TIMEOUT_DEBUG);
 
-export {};
+export { };

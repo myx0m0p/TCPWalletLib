@@ -37,9 +37,9 @@ async function signAndSendTransaction() {
 }
 
 it('Send signed referral transaction', async () => {
-  Helper.initForEnvByProcessVariable();
+  Helper.initBlockchain();
 
   await signAndSendTransaction();
 }, JEST_TIMEOUT);
 
-export {};
+export { };

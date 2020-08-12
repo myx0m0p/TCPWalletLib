@@ -9,7 +9,7 @@ import SmartContractsActionsDictionary = require('../../../../src/lib/dictionary
 
 const JEST_TIMEOUT = 15000;
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
 const accountNameFrom = Helper.getTesterAccountName();
 
@@ -41,4 +41,4 @@ it('Resend already created organizations - historical transactions', async () =>
   );
 }, JEST_TIMEOUT);
 
-export {};
+export { };

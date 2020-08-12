@@ -10,12 +10,12 @@ import WalletApi = require('../../../src/lib/wallet/api/wallet-api');
 import RegistrationApi = require('../../../src/lib/registration/api/registration-api');
 import ContentProfileHelper = require('../../helpers/content/content-profile-helper');
 
-Helper.initForEnvByProcessVariable();
+Helper.initBlockchain();
 
-const accountName       = Helper.getTesterAccountName();
-const activePrivateKey  = Helper.getTesterAccountPrivateKey();
+const accountName = Helper.getTesterAccountName();
+const activePrivateKey = Helper.getTesterAccountPrivateKey();
 
-const accountNameTo     = Helper.getAccountNameTo();
+const accountNameTo = Helper.getAccountNameTo();
 
 const JEST_TIMEOUT = 30000;
 
@@ -134,4 +134,4 @@ it('Bind a social key', async () => {
   await checkTrustAndProfileUpdating(user);
 }, JEST_TIMEOUT * 3);
 
-export {};
+export { };
