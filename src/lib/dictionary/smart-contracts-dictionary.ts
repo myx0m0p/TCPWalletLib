@@ -32,11 +32,11 @@ class SmartContractsDictionary {
   }
 
   public static uosActivity(): string {
-    return 'uos.activity';
+    return 'tcpactivity1';
   }
 
   public static uosAccountInfo(): string {
-    return 'uaccountinfo';
+    return 'tcpaccinfo11';
   }
 
   public static eosIo(): string {

@@ -25,10 +25,10 @@ class SmartContractsDictionary {
         return 'calculators';
     }
     static uosActivity() {
-        return 'uos.activity';
+        return 'tcpactivity1';
     }
     static uosAccountInfo() {
-        return 'uaccountinfo';
+        return 'tcpaccinfo11';
     }
     static eosIo() {
         return 'eosio';
