@@ -127,7 +127,7 @@ class TransactionSender {
      * @param {string} symbol
      * @return {Promise<Object>}
      */
-    static async sendTokens(accountNameFrom, privateKey, accountNameTo, amount, memo = '', symbol = currency_dictionary_1.UOS) {
+    static async sendTokens(accountNameFrom, privateKey, accountNameTo, amount, memo = '', symbol = currency_dictionary_1.TOKEN_SYMBOL) {
         const stringAmount = this.getUosAmountAsString(amount, symbol);
         const action = this.getSendTokensAction(accountNameFrom, accountNameTo, stringAmount, memo);
         return EosClient.sendTransaction(privateKey, [action]);
@@ -250,7 +250,7 @@ class TransactionSender {
      * @return {string}
      * @private
      */
-    static getUosAmountAsString(amount, symbol = currency_dictionary_1.UOS) {
+    static getUosAmountAsString(amount, symbol = currency_dictionary_1.TOKEN_SYMBOL) {
         return `${Math.floor(amount)}.0000 ${symbol}`;
     }
     static getClaimEmissionAction(accountNameFrom, permission) {

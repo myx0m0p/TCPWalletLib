@@ -6,7 +6,7 @@ const { Long } = bytebuffer;
 const BigNumberLib = require('bignumber.js');
 const UNSTAKE_WITHIN_DAYS = 3; // #task - move to config
 class ConverterHelper {
-    static getTokensAmountFromString(stringValue, token = currency_dictionary_1.UOS) {
+    static getTokensAmountFromString(stringValue, token = currency_dictionary_1.TOKEN_SYMBOL) {
         const value = stringValue.replace(` ${token}`, '');
         return +value;
     }

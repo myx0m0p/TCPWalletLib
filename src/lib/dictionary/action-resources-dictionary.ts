@@ -1,4 +1,4 @@
-import { UOS } from './currency-dictionary';
+import { TOKEN_SYMBOL } from './currency-dictionary';
 
 class ActionResourcesDictionary {
   public static basicResourceRam(): number {
@@ -18,11 +18,11 @@ class ActionResourcesDictionary {
   }
 
   public static basicResourceCpuTokens(): string {
-    return `${this.basicResourceCpuTokensNumber()}.0000 ${UOS}`;
+    return `${this.basicResourceCpuTokensNumber()}.0000 ${TOKEN_SYMBOL}`;
   }
 
   public static basicResourceNetTokens(): string {
-    return `${this.basicResourceNetTokensNumber()}.0000 ${UOS}`;
+    return `${this.basicResourceNetTokensNumber()}.0000 ${TOKEN_SYMBOL}`;
   }
 }
 

@@ -1,1 +1,1 @@
-export const UOS = 'UOS';
+export const TOKEN_SYMBOL = 'TLOS';

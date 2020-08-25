@@ -14,10 +14,10 @@ class ActionResourcesDictionary {
         return 1;
     }
     static basicResourceCpuTokens() {
-        return `${this.basicResourceCpuTokensNumber()}.0000 ${currency_dictionary_1.UOS}`;
+        return `${this.basicResourceCpuTokensNumber()}.0000 ${currency_dictionary_1.TOKEN_SYMBOL}`;
     }
     static basicResourceNetTokens() {
-        return `${this.basicResourceNetTokensNumber()}.0000 ${currency_dictionary_1.UOS}`;
+        return `${this.basicResourceNetTokensNumber()}.0000 ${currency_dictionary_1.TOKEN_SYMBOL}`;
     }
 }
 module.exports = ActionResourcesDictionary;

@@ -1,7 +1,7 @@
 import ActionsService from '../../service/actions-service';
 import { BadRequestError } from '../../errors/errors';
 import { IStringToAny } from '../../common/interfaces/common-interfaces';
-import { UOS } from '../../dictionary/currency-dictionary';
+import { TOKEN_SYMBOL } from '../../dictionary/currency-dictionary';
 import { IAccountData } from '../../account/interfaces/account-data-interfaces';
 
 import EosClient = require('../../common/client/eos-client');
@@ -203,7 +203,7 @@ class WalletApi {
   }
 
   public static async getAccountUosBalance(accountName): Promise<number> {
-    return BlockchainRegistry.getAccountBalance(accountName, UOS);
+    return BlockchainRegistry.getAccountBalance(accountName, TOKEN_SYMBOL);
   }
 
   /**
@@ -253,7 +253,7 @@ class WalletApi {
     const price = await this.getApproximateRamPriceByBytesAmount(bytesAmount);
 
     if (price < 1) {
-      throw new BadRequestError('Please increase amounts of bytes - total UOS price must be more or equal 1');
+      throw new BadRequestError(`Please increase amounts of bytes - total ${TOKEN_SYMBOL} price must be more or equal 1`);
     }
 
     return price;

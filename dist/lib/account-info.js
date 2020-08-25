@@ -10,7 +10,7 @@ const dataSchema = {
         emission: 0,
         unstaking_request: {
             amount: 0,
-            currency: currency_dictionary_1.UOS,
+            currency: currency_dictionary_1.TOKEN_SYMBOL,
             request_datetime: null,
             unstaked_on_datetime: null,
         },
@@ -30,11 +30,11 @@ const dataSchema = {
             tokens: {
                 self_delegated: 0,
                 delegated: 0,
-                currency: currency_dictionary_1.UOS,
+                currency: currency_dictionary_1.TOKEN_SYMBOL,
             },
             unstaking_request: {
                 amount: 0,
-                currency: currency_dictionary_1.UOS,
+                currency: currency_dictionary_1.TOKEN_SYMBOL,
                 request_datetime: null,
                 unstaked_on_datetime: null,
             },
@@ -47,11 +47,11 @@ const dataSchema = {
             tokens: {
                 self_delegated: 0,
                 delegated: 0,
-                currency: currency_dictionary_1.UOS,
+                currency: currency_dictionary_1.TOKEN_SYMBOL,
             },
             unstaking_request: {
                 amount: 0,
-                currency: currency_dictionary_1.UOS,
+                currency: currency_dictionary_1.TOKEN_SYMBOL,
                 request_datetime: null,
                 unstaked_on_datetime: null,
             },

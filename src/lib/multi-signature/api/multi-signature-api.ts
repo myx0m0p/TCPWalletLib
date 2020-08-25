@@ -6,7 +6,7 @@ import { Action } from 'eosjs/dist/eosjs-serialize';
 import { MultiSignatureActions } from '../service/multi-signature-actions';
 import { IStringToAny, ITransactionPushResponse } from '../../common/interfaces/common-interfaces';
 import { MultiSignatureValidator } from '../validators/multi-signature-validator';
-import { UOS } from '../../dictionary/currency-dictionary';
+import { TOKEN_SYMBOL } from '../../dictionary/currency-dictionary';
 import {
   extractAccountsFromMultiSignaturePermission,
 } from '../../account/helpers/account-data-helper';
@@ -218,7 +218,7 @@ class MultiSignatureApi {
     accountFrom: string,
     accountNameTo: string,
   ) {
-    const stringAmount = TransactionSender.getUosAmountAsString(1, UOS);
+    const stringAmount = TransactionSender.getUosAmountAsString(1, TOKEN_SYMBOL);
     const action = TransactionSender.getSendTokensAction(accountFrom, accountNameTo, stringAmount, '');
 
     return this.pushProposal(

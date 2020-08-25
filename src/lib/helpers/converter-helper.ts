@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { UOS } from '../dictionary/currency-dictionary';
+import { TOKEN_SYMBOL } from '../dictionary/currency-dictionary';
 
 const moment    = require('moment');
 const bytebuffer = require('bytebuffer');
@@ -16,7 +16,7 @@ interface NameWithEncoded {
 }
 
 class ConverterHelper {
-  public static getTokensAmountFromString(stringValue: string, token: string = UOS): number {
+  public static getTokensAmountFromString(stringValue: string, token: string = TOKEN_SYMBOL): number {
     const value = stringValue.replace(` ${token}`, '');
 
     return +value;

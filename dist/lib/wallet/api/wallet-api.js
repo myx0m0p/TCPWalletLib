@@ -128,7 +128,7 @@ class WalletApi {
         return BlockchainRegistry.getAccountBalance(accountName, symbol);
     }
     static async getAccountUosBalance(accountName) {
-        return BlockchainRegistry.getAccountBalance(accountName, currency_dictionary_1.UOS);
+        return BlockchainRegistry.getAccountBalance(accountName, currency_dictionary_1.TOKEN_SYMBOL);
     }
     /**
      *
@@ -170,7 +170,7 @@ class WalletApi {
     static async isMinUosAmountForRamOrException(bytesAmount) {
         const price = await this.getApproximateRamPriceByBytesAmount(bytesAmount);
         if (price < 1) {
-            throw new errors_1.BadRequestError('Please increase amounts of bytes - total UOS price must be more or equal 1');
+            throw new errors_1.BadRequestError(`Please increase amounts of bytes - total ${currency_dictionary_1.TOKEN_SYMBOL} price must be more or equal 1`);
         }
         return price;
     }

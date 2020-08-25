@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { BadRequestError } from './errors/errors';
-import { UOS } from './dictionary/currency-dictionary';
+import { TOKEN_SYMBOL } from './dictionary/currency-dictionary';
 import { IAccountData } from './account/interfaces/account-data-interfaces';
 
 import EosClient = require('./common/client/eos-client');
@@ -20,10 +20,10 @@ const TABLE_ROWS_LIMIT_ALL = 999999;
 const SMART_CONTRACT__TIME_LOCK  = 'uostimelock1';
 const SMART_CONTRACT__ACTIVITY_LOCK  = 'uosactvlock1';
 const TABLE_NAME__BALANCE      = 'balance';
-const UOS_TIMELOCK_START = '2020-01-01';
-const UOS_TIMELOCK_END = '2021-01-01';
-const UOS_ACTIVITY_LOCK_MULTIPLIER = 2;
-const UOS_TOKEN_DECIMALS = 4;
+const TOKEN_SYMBOL_TIMELOCK_START = '2020-01-01';
+const TOKEN_SYMBOL_TIMELOCK_END = '2021-01-01';
+const TOKEN_SYMBOL_ACTIVITY_LOCK_MULTIPLIER = 2;
+const TOKEN_SYMBOL_TOKEN_DECIMALS = 4;
 
 const _ = require('lodash');
 
@@ -186,7 +186,7 @@ class BlockchainRegistry {
   }
 
   /**
-   * @return {Promise<number>} UOS/RAM_BYTE
+   * @return {Promise<number>} TOKEN_SYMBOL/RAM_BYTE
    *
    * @link https://eosio.stackexchange.com/questions/847/how-to-get-current-last-ram-price
    */
@@ -323,7 +323,7 @@ class BlockchainRegistry {
       net: 0,
       cpu: 0,
 
-      currency: UOS,
+      currency: TOKEN_SYMBOL,
     };
 
     const response = await rpc.get_account(accountName);
@@ -338,7 +338,7 @@ class BlockchainRegistry {
     return data;
   }
 
-  public static async getAccountBalance(accountName: string, symbol: string = UOS): Promise<number> {
+  public static async getAccountBalance(accountName: string, symbol: string = TOKEN_SYMBOL): Promise<number> {
     const rpc = EosClient.getRpcClient();
 
     const balanceResponse = await rpc.get_currency_balance('eosio.token', accountName, symbol);
@@ -392,16 +392,16 @@ class BlockchainRegistry {
         unlocked: 0,
       };
       if (timeBalance.total > 0) {
-        const start = new Date(UOS_TIMELOCK_START).getTime();
-        const end = new Date(UOS_TIMELOCK_END).getTime();
+        const start = new Date(TOKEN_SYMBOL_TIMELOCK_START).getTime();
+        const end = new Date(TOKEN_SYMBOL_TIMELOCK_END).getTime();
         const now = new Date().getTime();
 
         let unlocked = Math.ceil(timeBalance.total * ((now - start) / (end - start)) - timeBalance.withdrawal);
 
         if (unlocked < 0) unlocked = 0;
 
-        totalAmount.total = Math.trunc((timeBalance.total / 10 ** UOS_TOKEN_DECIMALS) * 100) / 100;
-        totalAmount.unlocked = Math.trunc((unlocked / 10 ** UOS_TOKEN_DECIMALS) * 100) / 100;
+        totalAmount.total = Math.trunc((timeBalance.total / 10 ** TOKEN_SYMBOL_TOKEN_DECIMALS) * 100) / 100;
+        totalAmount.unlocked = Math.trunc((unlocked / 10 ** TOKEN_SYMBOL_TOKEN_DECIMALS) * 100) / 100;
       }
 
       return totalAmount;
@@ -430,15 +430,15 @@ class BlockchainRegistry {
 
       if (activityBalance.total > 0) {
         let totalEmission = await BlockchainRegistry.getTotalEmission(accountName);
-        totalEmission = Math.ceil(totalEmission * 10 ** UOS_TOKEN_DECIMALS);
+        totalEmission = Math.ceil(totalEmission * 10 ** TOKEN_SYMBOL_TOKEN_DECIMALS);
 
-        const start = new Date(UOS_TIMELOCK_START).getTime();
-        const end = new Date(UOS_TIMELOCK_END).getTime();
+        const start = new Date(TOKEN_SYMBOL_TIMELOCK_START).getTime();
+        const end = new Date(TOKEN_SYMBOL_TIMELOCK_END).getTime();
         const now = new Date().getTime();
 
         const amountByTime = activityBalance.total * ((now - start) / (end - start));
 
-        const totalEmissionUnlocked = totalEmission * UOS_ACTIVITY_LOCK_MULTIPLIER;
+        const totalEmissionUnlocked = totalEmission * TOKEN_SYMBOL_ACTIVITY_LOCK_MULTIPLIER;
 
         let unlocked = amountByTime;
 
@@ -448,8 +448,8 @@ class BlockchainRegistry {
 
         if (unlocked < 0) unlocked = 0;
 
-        totalAmount.total = Math.trunc((activityBalance.total / 10 ** UOS_TOKEN_DECIMALS) * 100) / 100;
-        totalAmount.unlocked = Math.trunc((unlocked / 10 ** UOS_TOKEN_DECIMALS) * 100) / 100;
+        totalAmount.total = Math.trunc((activityBalance.total / 10 ** TOKEN_SYMBOL_TOKEN_DECIMALS) * 100) / 100;
+        totalAmount.unlocked = Math.trunc((unlocked / 10 ** TOKEN_SYMBOL_TOKEN_DECIMALS) * 100) / 100;
       }
 
       return totalAmount;

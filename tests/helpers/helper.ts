@@ -1,5 +1,5 @@
 /* eslint-disable unicorn/prevent-abbreviations,max-len,no-shadow,jest/valid-expect,no-unused-vars,security/detect-object-injection,no-console */
-import { UOS } from '../../src/lib/dictionary/currency-dictionary';
+import { TOKEN_SYMBOL } from '../../src/lib/dictionary/currency-dictionary';
 
 import WalletApi = require('../../src/lib/wallet/api/wallet-api');
 import EosClient = require('../../src/lib/common/client/eos-client');
@@ -117,7 +117,7 @@ class Helper {
   static checkUnstakingRequestIsEmpty(data) {
     expect(data.amount).toBe(0);
     expect(data.request_datetime).toBeNull();
-    expect(data.currency).toBe(UOS);
+    expect(data.currency).toBe(TOKEN_SYMBOL);
   }
 
   /**
@@ -128,7 +128,7 @@ class Helper {
   static checkUnstakingRequestValues(data, amount) {
     expect(data.amount).toBe(amount);
     expect(data.request_datetime).not.toBeNull();
-    expect(data.currency).toBe(UOS);
+    expect(data.currency).toBe(TOKEN_SYMBOL);
   }
 
   /**
@@ -199,7 +199,7 @@ class Helper {
 
     expect(data.from).toBe(accountNameFrom);
     expect(data.to).toBe(accountNameTo);
-    expect(data.quantity).toBe(`${tokensAmount}.0000 UOS`);
+    expect(data.quantity).toBe(`${tokensAmount}.0000 TOKEN_SYMBOL`);
     expect(data.memo).toBe('');
   }
 
@@ -456,7 +456,7 @@ class Helper {
         airdrop_id: 29947,
         amount: 20001,
         acc_name: 'petr',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 7,
@@ -464,7 +464,7 @@ class Helper {
         airdrop_id: 29947,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 5,
@@ -472,7 +472,7 @@ class Helper {
         airdrop_id: 618018,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 9,
@@ -480,7 +480,7 @@ class Helper {
         airdrop_id: 587162,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 8,
@@ -488,7 +488,7 @@ class Helper {
         airdrop_id: 587162,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 20,
@@ -496,7 +496,7 @@ class Helper {
         airdrop_id: 1583784,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 17,
@@ -504,7 +504,7 @@ class Helper {
         airdrop_id: 3714441,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 25,
@@ -512,7 +512,7 @@ class Helper {
         airdrop_id: 7464427,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 27,
@@ -528,7 +528,7 @@ class Helper {
         airdrop_id: 3044321,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 11,
@@ -552,7 +552,7 @@ class Helper {
         airdrop_id: 5104204,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 31,
@@ -568,7 +568,7 @@ class Helper {
         airdrop_id: 3714441,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 10,
@@ -576,7 +576,7 @@ class Helper {
         airdrop_id: 4821544,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 32,
@@ -584,7 +584,7 @@ class Helper {
         airdrop_id: 2603820,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 12,
@@ -592,7 +592,7 @@ class Helper {
         airdrop_id: 5104204,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 19,
@@ -608,7 +608,7 @@ class Helper {
         airdrop_id: 87218862,
         amount: 30001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 33,
@@ -616,7 +616,7 @@ class Helper {
         airdrop_id: 2603820,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 18,
@@ -624,7 +624,7 @@ class Helper {
         airdrop_id: 8085431,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 24,
@@ -632,7 +632,7 @@ class Helper {
         airdrop_id: 7464427,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 26,
@@ -648,7 +648,7 @@ class Helper {
         airdrop_id: 1583784,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 14,
@@ -656,7 +656,7 @@ class Helper {
         airdrop_id: 3345720,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 23,
@@ -680,7 +680,7 @@ class Helper {
         airdrop_id: 1882053,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
     ];
   }
@@ -693,7 +693,7 @@ class Helper {
         airdrop_id: 12,
         amount: 1,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 1,
@@ -701,7 +701,7 @@ class Helper {
         airdrop_id: 13,
         amount: 1,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 2,
@@ -709,7 +709,7 @@ class Helper {
         airdrop_id: 12,
         amount: 10001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 3,
@@ -717,7 +717,7 @@ class Helper {
         airdrop_id: 14,
         amount: 1,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 4,
@@ -725,7 +725,7 @@ class Helper {
         airdrop_id: 14,
         amount: 2001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 5,
@@ -733,7 +733,7 @@ class Helper {
         airdrop_id: 618018,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 6,
@@ -741,7 +741,7 @@ class Helper {
         airdrop_id: 29947,
         amount: 20001,
         acc_name: 'petr',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 7,
@@ -749,7 +749,7 @@ class Helper {
         airdrop_id: 29947,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 8,
@@ -757,7 +757,7 @@ class Helper {
         airdrop_id: 587162,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 9,
@@ -765,7 +765,7 @@ class Helper {
         airdrop_id: 587162,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 10,
@@ -773,7 +773,7 @@ class Helper {
         airdrop_id: 4821544,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 11,
@@ -789,7 +789,7 @@ class Helper {
         airdrop_id: 5104204,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 13,
@@ -797,7 +797,7 @@ class Helper {
         airdrop_id: 5104204,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 14,
@@ -805,7 +805,7 @@ class Helper {
         airdrop_id: 3345720,
         amount: 20001,
         acc_name: 'summerknight',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 15,
@@ -821,7 +821,7 @@ class Helper {
         airdrop_id: 3714441,
         amount: 20001,
         acc_name: 'vlad',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
       {
         id: 17,
@@ -829,7 +829,7 @@ class Helper {
         airdrop_id: 3714441,
         amount: 20001,
         acc_name: 'jane',
-        symbol: 'UOSTEST',
+        symbol: 'TOKEN_SYMBOLTEST',
       },
     ];
   }

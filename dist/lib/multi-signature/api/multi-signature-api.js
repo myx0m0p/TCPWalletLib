@@ -117,7 +117,7 @@ class MultiSignatureApi {
         return this.proposeApproveAndExecuteByProposer(accountName, activePrivateKey, permission, actions);
     }
     static async createTransferProposal(whoPropose, proposePrivateKey, proposePermission, proposeRequestedFrom, accountFrom, accountNameTo) {
-        const stringAmount = TransactionSender.getUosAmountAsString(1, currency_dictionary_1.UOS);
+        const stringAmount = TransactionSender.getUosAmountAsString(1, currency_dictionary_1.TOKEN_SYMBOL);
         const action = TransactionSender.getSendTokensAction(accountFrom, accountNameTo, stringAmount, '');
         return this.pushProposal(whoPropose, proposePrivateKey, proposePermission, [proposeRequestedFrom], [action], PermissionsDictionary.active());
     }

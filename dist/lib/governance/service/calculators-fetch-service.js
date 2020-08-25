@@ -48,7 +48,7 @@ class CalculatorsFetchService {
                 votes_count: 0,
                 votes_amount: 0,
                 scaled_importance_amount: 0,
-                currency: currency_dictionary_1.UOS,
+                currency: currency_dictionary_1.TOKEN_SYMBOL,
                 bp_status: BlockchainNodesDictionary.getBackupOrInactive(node),
             };
         }
@@ -74,7 +74,7 @@ class CalculatorsFetchService {
                         title: producer,
                         votes_count: 0,
                         votes_amount: 0,
-                        currency: currency_dictionary_1.UOS,
+                        currency: currency_dictionary_1.TOKEN_SYMBOL,
                         scaled_importance_amount: 0,
                         bp_status: activeProducers[producer] ?
                             BlockchainNodesDictionary.statusActive()

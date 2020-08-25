@@ -1,5 +1,5 @@
 import SmartContractsDictionary from '../../dictionary/smart-contracts-dictionary';
-import { UOS } from '../../dictionary/currency-dictionary';
+import { TOKEN_SYMBOL } from '../../dictionary/currency-dictionary';
 
 import EosClient = require('../../common/client/eos-client');
 import BlockchainNodesDictionary = require('../dictionary/blockchain-nodes-dictionary');
@@ -55,7 +55,7 @@ class BlockProducersFetchService {
         title:        producerSet.owner,
         votes_count:  0,
         votes_amount: 0,
-        currency:     UOS,
+        currency:     TOKEN_SYMBOL,
         scaled_importance_amount: 0,
         bp_status:    BlockchainNodesDictionary.getBackupOrInactive(producerSet),
       };
@@ -91,7 +91,7 @@ class BlockProducersFetchService {
             title:        producer,
             votes_count:  0,
             votes_amount: 0,
-            currency:     UOS,
+            currency:     TOKEN_SYMBOL,
 
             scaled_importance_amount: 0,
 
