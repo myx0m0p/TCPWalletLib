@@ -36,7 +36,7 @@ class SocialKeyApi {
             SocialKeyService.getBindSocialKeyAction(accountName, socialPublicKey),
             SocialKeyService.getSocialPermissionForSocialActions(accountName, permission),
             SocialKeyService.getSocialPermissionForProfileUpdating(accountName, permission),
-            SocialKeyService.getSocialPermissionForEmissionClaim(accountName, permission),
+            // SocialKeyService.getSocialPermissionForEmissionClaim(accountName, permission),
             ...SocialKeyService.getSocialPermissionForProposeApproveAndExecute(accountName, permission),
         ];
         return EosClient.sendTransaction(activePrivateKey, actions);
@@ -45,7 +45,7 @@ class SocialKeyApi {
         return [
             SocialKeyService.getSocialPermissionForSocialActions(accountName, actorPermission),
             SocialKeyService.getSocialPermissionForProfileUpdating(accountName, actorPermission),
-            SocialKeyService.getSocialPermissionForEmissionClaim(accountName, actorPermission),
+            // SocialKeyService.getSocialPermissionForEmissionClaim(accountName, actorPermission),
             ...SocialKeyService.getSocialPermissionForProposeApproveAndExecute(accountName, actorPermission),
         ];
     }
@@ -67,7 +67,6 @@ class SocialKeyApi {
         await this.socialKeyExistOrError(accountName);
         const actions = [
             SocialKeyService.getSocialPermissionForProfileUpdating(accountName),
-            SocialKeyService.getSocialPermissionForEmissionClaim(accountName),
         ];
         let result;
         try {
