@@ -482,14 +482,14 @@ class BlockchainRegistry {
     const balance = await this.getAccountBalance(accountName);
     info.setActiveTokens(balance);
 
-    const emission = await this.getEmission(accountName);
-    info.setEmission(emission);
+    //const emission = await this.getEmission(accountName);
+    //info.setEmission(emission);
 
-    const timelock = await this.getTimeUnlocked(accountName);
-    info.setTimeLock(timelock);
+    //const timelock = await this.getTimeUnlocked(accountName);
+    //info.setTimeLock(timelock);
 
-    const activitylock = await this.getActivityUnlocked(accountName);
-    info.setActivityLock(activitylock);
+    //const activitylock = await this.getActivityUnlocked(accountName);
+    //info.setActivityLock(activitylock);
 
     let response;
     try {
